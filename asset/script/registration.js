@@ -1,51 +1,57 @@
 function validateForm() {
+    const error = document.getElementById('error');
+    error.innerHTML = ""; // Reset error message
 
-    let name = document.getElementById('name').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let password = document.getElementById('password').value.trim();
-    let address = document.getElementById('address').value.trim();
-    let phone = document.getElementById('phone').value.trim();
-    let image = document.getElementById('image').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const imageInput = document.getElementById('image');
 
-    let msg = document.getElementById('error');
+    if (!name || !email || !password || !address || !phone || imageInput.files.length === 0) {
+        error.innerHTML = "All fields are required.";
+        return false;
+    }
 
-    if (name === "" || email === "" || password === "" || address === "" || phone === "" || image === "") {
-        msg.innerHTML = "All fields including image are required";
+    if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+        error.innerHTML = "Invalid email format.";
         return false;
     }
 
     if (password.length < 8) {
-        msg.innerHTML = "Password must be at least 8 characters";
+        error.innerHTML = "Password must be at least 8 characters.";
         return false;
     }
 
     if (phone.length !== 11) {
-        msg.innerHTML = "Phone must be exactly 11 digits";
+        error.innerHTML = "Phone must be exactly 11 digits.";
         return false;
     }
 
-    for (let i = 0; i < phone.length; i++) {
-        if (phone[i] < '0' || phone[i] > '9') {
-            msg.innerHTML = "Phone must contain numbers only";
+    const validDigits = "0123456789";
+    for (let char of phone) {
+        if (validDigits.indexOf(char) === -1) {
+            error.innerHTML = "Phone must contain numbers only.";
             return false;
         }
     }
 
-    let allowed = [".jpg", ".jpeg", ".png", ".gif"];
-    let validImage = false;
-
-    for (let i = 0; i < allowed.length; i++) {
-        if (image.endsWith(allowed[i])) {
-            validImage = true;
+    const file = imageInput.files[0];
+    const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
+    
+    let isTypeAllowed = false;
+    for (let type of allowedTypes) {
+        if (file.type === type) {
+            isTypeAllowed = true;
             break;
         }
     }
 
-    if (!validImage) {
-        msg.innerHTML = "Only JPG, JPEG, PNG, GIF allowed";
+    if (!isTypeAllowed) {
+        error.innerHTML = "File type not supported. Use JPG, PNG, or GIF.";
         return false;
     }
 
-    error.innerHTML = "";
     return true;
 }
