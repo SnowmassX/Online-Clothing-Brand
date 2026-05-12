@@ -1,8 +1,9 @@
 <?php
 
-    require_once('db.php');
+require_once('db.php');
 
-    function addUser($user) {
+function addUser($user)
+{
 
     $con = getConnection();
 
@@ -20,7 +21,7 @@
     $address = mysqli_real_escape_string($con, $user['address']);
     $phone = mysqli_real_escape_string($con, $user['phone']);
     $imageName = mysqli_real_escape_string($con, $user['profile_picture']);
-    
+
 
     $sql = "
         INSERT INTO users 
@@ -36,108 +37,109 @@
     return $result;
 }
 
-    function getAllUsers(){
+function getAllUsers()
+{
 
-        $con = getConnection();
+    $con = getConnection();
 
-        $users = [];
+    $users = [];
 
-        if(!$con){
-            return $users;
-        }
+    if (!$con) {
+        return $users;
+    }
 
-        $sql = "
+    $sql = "
             select *
             from users
             order by id desc
         ";
 
-        $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $sql);
 
-        if($result){
+    if ($result) {
 
-            while($row = mysqli_fetch_assoc($result)){
+        while ($row = mysqli_fetch_assoc($result)) {
 
-                array_push($users, $row);
-            }
+            array_push($users, $row);
         }
-
-        mysqli_close($con);
-
-        return $users;
     }
 
-    function getUserById($id){
+    mysqli_close($con);
 
-        $con = getConnection();
+    return $users;
+}
 
-        $user = [];
+function login($user)
+{
+    $con = getConnection();
+    $sql = "select * from users where email='{$user['email']}' and password_hash='{$user['password']}'";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) == 1) {
+        return true && mysqli_fetch_assoc($result);
+    } else {
+        return false;
+    }
+}
 
-        if(!$con){
-            return $user;
-        }
+function getUserById($id)
+{
 
-        $sql = "
+    $con = getConnection();
+
+    $user = [];
+
+    if (!$con) {
+        return $user;
+    }
+
+    $sql = "
             select *
             from users
             where id={$id}
         ";
 
-        $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $sql);
 
-        if(
-            $result &&
-            mysqli_num_rows($result) == 1
-        ){
+    if (
+        $result &&
+        mysqli_num_rows($result) == 1
+    ) {
 
-            $user = mysqli_fetch_assoc($result);
-        }
+        $user = mysqli_fetch_assoc($result);
+    }
 
-        mysqli_close($con);
+    mysqli_close($con);
 
+    return $user;
+}
+
+function getUserByEmail($email) {
+    $con = getConnection();
+    
+    $email = mysqli_real_escape_string($con, $email);
+
+    $sql = "SELECT * FROM users WHERE email='{$email}'";
+    $result = mysqli_query($con, $sql);
+
+    if ($result && mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
         return $user;
     }
 
-    function getUserByEmail($email){
+    mysqli_close($con);
+    return false;
+}
 
-        $con = getConnection();
+function updateUser($user)
+{
 
-        $user = [];
+    $con = getConnection();
 
-        if(!$con){
-            return $user;
-        }
-
-        $sql = "
-            select *
-            from users
-            where email='{$email}'
-        ";
-
-        $result = mysqli_query($con, $sql);
-
-        if(
-            $result &&
-            mysqli_num_rows($result) == 1
-        ){
-
-            $user = mysqli_fetch_assoc($result);
-        }
-
-        mysqli_close($con);
-
-        return $user;
+    if (!$con) {
+        return false;
     }
 
-    function updateUser($user){
-
-        $con = getConnection();
-
-        if(!$con){
-            return false;
-        }
-
-        $sql = "
+    $sql = "
             update users
             set
                 name='{$user['name']}',
@@ -149,31 +151,30 @@
             where id={$user['id']}
         ";
 
-        $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $sql);
 
-        mysqli_close($con);
+    mysqli_close($con);
 
-        return $result;
+    return $result;
+}
+
+function deleteUser($id)
+{
+
+    $con = getConnection();
+
+    if (!$con) {
+        return false;
     }
 
-    function deleteUser($id){
-
-        $con = getConnection();
-
-        if(!$con){
-            return false;
-        }
-
-        $sql = "
+    $sql = "
             delete from users
             where id={$id}
         ";
 
-        $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $sql);
 
-        mysqli_close($con);
+    mysqli_close($con);
 
-        return $result;
-    }
-
-?>
+    return $result;
+}
