@@ -7,11 +7,14 @@ var resultCount    = document.getElementById('result-count');
 
 var typingTimer = null;
 
+<<<<<<< HEAD
 function getUrlParam(name) {
     var params = new URLSearchParams(window.location.search);
     return params.get(name) || '';
 }
 
+=======
+>>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
 function fetchProducts() {
     var q        = searchInput.value.trim();
     var gender   = genderFilter.value;
@@ -56,7 +59,11 @@ function showProducts(products) {
 
         var imgSrc = '../asset/img/no-image.jpg';
         if (p.image_path != '' && p.image_path != null) {
+<<<<<<< HEAD
             imgSrc = '../asset/upload/products/' + p.image_path;
+=======
+            imgSrc = '../public/uploads/products/' + p.image_path;
+>>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
         }
 
         var stockHtml = '';
@@ -101,6 +108,7 @@ categoryFilter.addEventListener('change', function() {
     fetchProducts();
 });
 
+<<<<<<< HEAD
 var urlQ      = getUrlParam('q');
 var urlGender = getUrlParam('gender');
 
@@ -113,3 +121,6 @@ if (urlGender == 'Men' || urlGender == 'Women') {
 }
 
 fetchProducts();
+=======
+fetchProducts();
+>>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))

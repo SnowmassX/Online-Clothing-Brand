@@ -28,11 +28,18 @@ foreach ($allCategories as $cat) {
     <a class="brand" href="../index.php">StyleStore</a>
     <div class="nav-links">
         <a href="../index.php">Home</a>
+<<<<<<< HEAD
         <?php if (isset($_SESSION['id'])): ?>
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="purchase_history.php">My Orders</a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
             <a href="../controller/logout.php">Logout</a>
+=======
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
+            <a href="../controller/AuthController.php?action=logout">Logout</a>
+>>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
         <?php else: ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
@@ -58,7 +65,10 @@ foreach ($allCategories as $cat) {
         </select>
         <button id="search-btn">Search</button>
     </div>
+<<<<<<< HEAD
     <p id="search-error" style="color:red; font-size:13px; text-align:center;"></p>
+=======
+>>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
     <p id="result-count"></p>
 </div>
 
@@ -68,8 +78,15 @@ foreach ($allCategories as $cat) {
     </div>
 </div>
 
+<<<<<<< HEAD
 <script src="../asset/script/search.js"></script>
 <script src="../asset/script/validation.js"></script>
 
 </body>
 </html>
+=======
+<script src="../asset/js/search.js"></script>
+
+</body>
+</html>
+>>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
