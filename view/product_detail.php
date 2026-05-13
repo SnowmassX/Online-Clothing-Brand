@@ -29,7 +29,11 @@ if ($product['size_chart'] != null && $product['size_chart'] != '') {
 
 $imgSrc = '../asset/img/no-image.jpg';
 if ($product['image_path'] != null && $product['image_path'] != '') {
+<<<<<<< HEAD
     $imgSrc = '../asset/upload/products/' . $product['image_path'];
+=======
+    $imgSrc = '../public/uploads/products/' . $product['image_path'];
+>>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
 }
 ?>
 <!DOCTYPE html>
@@ -46,10 +50,21 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
     <a class="brand" href="../index.php">StyleStore</a>
     <div class="nav-links">
         <a href="search_results.php">Browse</a>
+<<<<<<< HEAD
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="purchase_history.php">My Orders</a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
             <a href="../controller/logout.php">Logout</a>
+=======
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
+            <a href="../controller/AuthController.php?action=logout">Logout</a>
+        <?php else: ?>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+        <?php endif; ?>
+>>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
     </div>
 </nav>
 
@@ -65,7 +80,11 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
 
         <div class="product-meta">
             <span><?php echo htmlspecialchars($product['gender']); ?></span>
+<<<<<<< HEAD
             
+=======
+            <span>&middot;</span>
+>>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
             <span><?php echo htmlspecialchars($product['category_name']); ?></span>
         </div>
 
@@ -132,7 +151,14 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
     </div>
 </div>
 
+<<<<<<< HEAD
 <script src="../asset/script/product_detail.js"></script>
 
 </body>
 </html>
+=======
+<script src="../asset/js/product_detail.js"></script>
+
+</body>
+</html>
+>>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
