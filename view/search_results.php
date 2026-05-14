@@ -28,10 +28,10 @@ foreach ($allCategories as $cat) {
     <a class="brand" href="../index.php">StyleStore</a>
     <div class="nav-links">
         <a href="../index.php">Home</a>
-        <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if (isset($_SESSION['id'])): ?>
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
-            <a href="../controller/AuthController.php?action=logout">Logout</a>
+            <a href="../controller/logout.php">Logout</a>
         <?php else: ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
@@ -66,7 +66,7 @@ foreach ($allCategories as $cat) {
     </div>
 </div>
 
-<script src="../asset/js/search.js"></script>
+<script src="../asset/script/search.js"></script>
 
 </body>
 </html>

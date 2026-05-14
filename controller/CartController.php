@@ -6,12 +6,12 @@ require_once __DIR__ . '/../model/CartModel.php';
 
 header('Content-Type: application/json');
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['id'])) {
     echo json_encode(array('success' => false, 'error' => 'not_logged_in'));
     exit;
 }
 
-$user_id = (int) $_SESSION['user_id'];
+$user_id = (int) $_SESSION['id'];
 $action  = isset($_POST['action']) ? trim($_POST['action']) : '';
 
 $cartModel = new CartModel();

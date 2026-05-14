@@ -46,10 +46,10 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
     <a class="brand" href="../index.php">StyleStore</a>
     <div class="nav-links">
         <a href="search_results.php">Browse</a>
-        <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if (isset($_SESSION['id'])): ?>
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
-            <a href="../controller/AuthController.php?action=logout">Logout</a>
+            <a href="../controller/logout.php">Logout</a>
         <?php else: ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
@@ -136,7 +136,7 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
     </div>
 </div>
 
-<script src="../asset/js/product_detail.js"></script>
+<script src="../asset/script/product_detail.js"></script>
 
 </body>
 </html>

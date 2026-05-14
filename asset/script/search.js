@@ -7,6 +7,11 @@ var resultCount    = document.getElementById('result-count');
 
 var typingTimer = null;
 
+function getUrlParam(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || '';
+}
+
 function fetchProducts() {
     var q        = searchInput.value.trim();
     var gender   = genderFilter.value;
@@ -95,5 +100,16 @@ genderFilter.addEventListener('change', function() {
 categoryFilter.addEventListener('change', function() {
     fetchProducts();
 });
+
+var urlQ      = getUrlParam('q');
+var urlGender = getUrlParam('gender');
+
+if (urlQ != '') {
+    searchInput.value = urlQ;
+}
+
+if (urlGender == 'Men' || urlGender == 'Women') {
+    genderFilter.value = urlGender;
+}
 
 fetchProducts();

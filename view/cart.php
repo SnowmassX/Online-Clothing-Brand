@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['id'])) {
     header('Location: login.php');
     exit;
 }
@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 require_once __DIR__ . '/../model/CartModel.php';
 
 $cartModel = new CartModel();
-$user_id   = (int) $_SESSION['user_id'];
+$user_id   = (int) $_SESSION['id'];
 $cartItems = $cartModel->getCartByUser($user_id);
 
 $total = 0;
@@ -34,7 +34,7 @@ foreach ($cartItems as $item) {
         <a href="search_results.php">Browse</a>
         <a href="cart.php">Cart <span class="cart-badge" id="cart-count"><?php echo count($cartItems); ?></span></a>
         <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
-        <a href="../controller/AuthController.php?action=logout">Logout</a>
+        <a href="../controller/logout.php">Logout</a>
     </div>
 </nav>
 
@@ -109,7 +109,7 @@ foreach ($cartItems as $item) {
 
 </div>
 
-<script src="../asset/js/cart.js"></script>
+<script src="../asset/script/cart.js"></script>
 
 </body>
 </html>
