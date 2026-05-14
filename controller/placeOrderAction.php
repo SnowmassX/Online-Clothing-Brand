@@ -1,20 +1,19 @@
 <?php
 session_start();
+require_once('../model/orderModel.php');
 
-if (!isset($_SESSION['id'])) {
-    header("Location: ../view/login.php");
-    exit();
-}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ../view/login.php");
+        exit();
+    }
 
-require_once __DIR__ . '/../model/checkoutModel.php';
+    $userId = $_SESSION['user_id'];
+    $address = $_POST['address'];
+    $paymentMethod = $_POST['payment_method'];
+    $totalAmount = $_POST['total_amount'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $userId        = (int) $_SESSION['id'];
-    $totalAmount   = $_POST['total_amount'] ?? 0;
-    $paymentMethod = $_POST['payment_method'] ?? '';
-
-    if (empty($paymentMethod)) {
+    if (empty($address) || empty($paymentMethod)) {
         header("Location: ../view/checkout.php?error=empty_fields");
         exit();
     }

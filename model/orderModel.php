@@ -17,13 +17,22 @@ function getPurchaseHistory($userId) {
 
 function getOrderDetails($orderId) {
     $con = getConnection();
+<<<<<<< HEAD
     $sql = "SELECT oi.quantity, oi.unit_price, pr.name AS product_name
             FROM order_items oi
             JOIN products pr ON oi.product_id = pr.id
+=======
+    $sql = "SELECT p.name, oi.quantity, oi.unit_price FROM order_items oi 
+            JOIN products p ON oi.product_id = p.id 
+>>>>>>> 004b1b1 (Updated checkout and added order management & payment views)
             WHERE oi.order_id = ?";
     $stmt = mysqli_prepare($con, $sql);
     mysqli_stmt_bind_param($stmt, "i", $orderId);
     mysqli_stmt_execute($stmt);
     return mysqli_stmt_get_result($stmt);
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 004b1b1 (Updated checkout and added order management & payment views)

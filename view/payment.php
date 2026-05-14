@@ -12,6 +12,7 @@ $order_id = $_GET['order_id'] ?? null;
 <html>
 <head>
     <title>Payment Page</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../asset/css/payment.css">
 </head>
 <body>
@@ -64,5 +65,33 @@ $order_id = $_GET['order_id'] ?? null;
     </div>
 
     <script src="../asset/script/payment.js"></script>
+=======
+</head>
+<body>
+    <h2>Complete Your Payment</h2>
+    <p>Total Payable Amount: <strong><?php echo $total_amount; ?> TK</strong></p>
+
+    <form action="../controller/PaymentController.php" method="POST">
+        <input type="hidden" name="total_amount" value="<?php echo $total_amount; ?>">
+        
+        <h3>Choose Payment Method:</h3>
+        <input type="radio" name="method" value="bKash" required> bKash <br>
+        <input type="radio" name="method" value="Nagad"> Nagad <br>
+        <input type="radio" name="method" value="Card"> Credit/Debit Card <br><br>
+
+        <div id="payment-details">
+            <label>Enter Account/Card Number:</label><br>
+            <input type="text" name="account_no" required><br><br>
+            <label>Enter PIN/CVV:</label><br>
+            <input type="password" name="pin" required>
+        </div>
+
+        <br>
+        <button type="submit">Pay Now</button>
+    </form>
+
+    <br>
+    <a href="checkout.php">Cancel and Go Back</a>
+>>>>>>> 004b1b1 (Updated checkout and added order management & payment views)
 </body>
 </html>

@@ -6,6 +6,10 @@
 
     function getConnection(){
         global $host, $dbuser;
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "online-clothing-brand"; 
 
         $con = mysqli_connect($host, $dbuser, $GLOBALS['dbpass'], $GLOBALS['dbname']);
 
