@@ -6,7 +6,8 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
-require_once __DIR__ . '/../model/checkoutModel.php';
+require_once('../model/db.php');
+$con = getConnection();
 
 $userId     = (int) $_SESSION['id'];
 $cartResult = getUserCartItems($userId);
