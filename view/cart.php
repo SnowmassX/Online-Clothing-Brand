@@ -2,7 +2,11 @@
 
 session_start();
 
+<<<<<<< HEAD
 if (!isset($_SESSION['id'])) {
+=======
+if (!isset($_SESSION['user_id'])) {
+>>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
     header('Location: login.php');
     exit;
 }
@@ -10,7 +14,11 @@ if (!isset($_SESSION['id'])) {
 require_once __DIR__ . '/../model/CartModel.php';
 
 $cartModel = new CartModel();
+<<<<<<< HEAD
 $user_id   = (int) $_SESSION['id'];
+=======
+$user_id   = (int) $_SESSION['user_id'];
+>>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
 $cartItems = $cartModel->getCartByUser($user_id);
 
 $total = 0;
@@ -33,9 +41,14 @@ foreach ($cartItems as $item) {
     <div class="nav-links">
         <a href="search_results.php">Browse</a>
         <a href="cart.php">Cart <span class="cart-badge" id="cart-count"><?php echo count($cartItems); ?></span></a>
+<<<<<<< HEAD
         <a href="purchase_history.php">My Orders</a>
         <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
         <a href="../controller/logout.php">Logout</a>
+=======
+        <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
+        <a href="../controller/AuthController.php?action=logout">Logout</a>
+>>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
     </div>
 </nav>
 
@@ -58,7 +71,11 @@ foreach ($cartItems as $item) {
 
                     <div class="cart-img">
                         <?php if ($item['image_path'] != null && $item['image_path'] != ''): ?>
+<<<<<<< HEAD
                             <img src="../asset/upload/products/<?php echo htmlspecialchars($item['image_path']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+=======
+                            <img src="../public/uploads/products/<?php echo htmlspecialchars($item['image_path']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+>>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
                         <?php else: ?>
                             <img src="../asset/img/no-image.jpg" alt="no image">
                         <?php endif; ?>
@@ -73,6 +90,7 @@ foreach ($cartItems as $item) {
                     <div class="cart-price">Tk <?php echo number_format($item['price'], 2); ?></div>
 
                     <div class="cart-qty">
+<<<<<<< HEAD
                         <div class="qty-controls">
                             <button class="qty-btn minus-btn" data-product-id="<?php echo $item['product_id']; ?>">-</button>
                             <input type="number"
@@ -85,6 +103,17 @@ foreach ($cartItems as $item) {
                             <button class="qty-btn plus-btn" data-product-id="<?php echo $item['product_id']; ?>">+</button>
                         </div>
                         <span id="qty-error-<?php echo $item['product_id']; ?>" style="color:red; font-size:12px;"></span>
+=======
+                        <button class="qty-btn minus-btn" data-product-id="<?php echo $item['product_id']; ?>">-</button>
+                        <input type="number"
+                               class="qty-input"
+                               value="<?php echo $item['quantity']; ?>"
+                               min="1"
+                               max="<?php echo $item['stock']; ?>"
+                               data-product-id="<?php echo $item['product_id']; ?>"
+                               data-stock="<?php echo $item['stock']; ?>">
+                        <button class="qty-btn plus-btn" data-product-id="<?php echo $item['product_id']; ?>">+</button>
+>>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
                     </div>
 
                     <div class="cart-subtotal" id="subtotal-<?php echo $item['product_id']; ?>">
@@ -113,8 +142,15 @@ foreach ($cartItems as $item) {
 
 </div>
 
+<<<<<<< HEAD
 <script src="../asset/script/cart.js"></script>
 <script src="../asset/script/validation.js"></script>
 
 </body>
 </html>
+=======
+<script src="../asset/js/cart.js"></script>
+
+</body>
+</html>
+>>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
