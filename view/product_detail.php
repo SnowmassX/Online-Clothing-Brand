@@ -51,15 +51,19 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
     <div class="nav-links">
         <a href="search_results.php">Browse</a>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="purchase_history.php">My Orders</a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
             <a href="../controller/logout.php">Logout</a>
 =======
         <?php if (isset($_SESSION['user_id'])): ?>
+=======
+        <?php if (isset($_SESSION['id'])): ?>
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
-            <a href="../controller/AuthController.php?action=logout">Logout</a>
+            <a href="../controller/logout.php">Logout</a>
         <?php else: ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
@@ -152,6 +156,7 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <script src="../asset/script/product_detail.js"></script>
 
 </body>
@@ -162,3 +167,9 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
 </body>
 </html>
 >>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
+=======
+<script src="../asset/script/product_detail.js"></script>
+
+</body>
+</html>
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))

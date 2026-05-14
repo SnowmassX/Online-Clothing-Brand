@@ -7,19 +7,27 @@ require_once __DIR__ . '/../model/CartModel.php';
 header('Content-Type: application/json');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if (!isset($_SESSION['id'])) {
 =======
 if (!isset($_SESSION['user_id'])) {
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+if (!isset($_SESSION['id'])) {
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
     echo json_encode(array('success' => false, 'error' => 'not_logged_in'));
     exit;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 $user_id = (int) $_SESSION['id'];
 =======
 $user_id = (int) $_SESSION['user_id'];
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+$user_id = (int) $_SESSION['id'];
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
 $action  = isset($_POST['action']) ? trim($_POST['action']) : '';
 
 $cartModel = new CartModel();
@@ -139,7 +147,11 @@ if ($action == 'remove') {
 
 echo json_encode(array('success' => false, 'error' => 'Invalid action'));
 <<<<<<< HEAD
+<<<<<<< HEAD
 ?>
 =======
 ?>
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+?>
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))

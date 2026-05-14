@@ -8,13 +8,19 @@ var resultCount    = document.getElementById('result-count');
 var typingTimer = null;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
 function getUrlParam(name) {
     var params = new URLSearchParams(window.location.search);
     return params.get(name) || '';
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
+=======
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
 function fetchProducts() {
     var q        = searchInput.value.trim();
     var gender   = genderFilter.value;
@@ -109,6 +115,9 @@ categoryFilter.addEventListener('change', function() {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
 var urlQ      = getUrlParam('q');
 var urlGender = getUrlParam('gender');
 
@@ -120,7 +129,11 @@ if (urlGender == 'Men' || urlGender == 'Women') {
     genderFilter.value = urlGender;
 }
 
+<<<<<<< HEAD
 fetchProducts();
 =======
 fetchProducts();
 >>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
+=======
+fetchProducts();
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))

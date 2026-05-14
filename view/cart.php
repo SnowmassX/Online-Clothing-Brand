@@ -3,10 +3,14 @@
 session_start();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if (!isset($_SESSION['id'])) {
 =======
 if (!isset($_SESSION['user_id'])) {
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+if (!isset($_SESSION['id'])) {
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
     header('Location: login.php');
     exit;
 }
@@ -15,10 +19,14 @@ require_once __DIR__ . '/../model/CartModel.php';
 
 $cartModel = new CartModel();
 <<<<<<< HEAD
+<<<<<<< HEAD
 $user_id   = (int) $_SESSION['id'];
 =======
 $user_id   = (int) $_SESSION['user_id'];
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+$user_id   = (int) $_SESSION['id'];
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
 $cartItems = $cartModel->getCartByUser($user_id);
 
 $total = 0;
@@ -47,8 +55,12 @@ foreach ($cartItems as $item) {
         <a href="../controller/logout.php">Logout</a>
 =======
         <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
+<<<<<<< HEAD
         <a href="../controller/AuthController.php?action=logout">Logout</a>
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+        <a href="../controller/logout.php">Logout</a>
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
     </div>
 </nav>
 
@@ -143,6 +155,7 @@ foreach ($cartItems as $item) {
 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <script src="../asset/script/cart.js"></script>
 <script src="../asset/script/validation.js"></script>
 
@@ -154,3 +167,9 @@ foreach ($cartItems as $item) {
 </body>
 </html>
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+<script src="../asset/script/cart.js"></script>
+
+</body>
+</html>
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))

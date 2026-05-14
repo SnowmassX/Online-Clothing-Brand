@@ -29,6 +29,7 @@ foreach ($allCategories as $cat) {
     <div class="nav-links">
         <a href="../index.php">Home</a>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <?php if (isset($_SESSION['id'])): ?>
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="purchase_history.php">My Orders</a>
@@ -40,6 +41,12 @@ foreach ($allCategories as $cat) {
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
             <a href="../controller/AuthController.php?action=logout">Logout</a>
 >>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
+=======
+        <?php if (isset($_SESSION['id'])): ?>
+            <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
+            <a href="../controller/logout.php">Logout</a>
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
         <?php else: ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
@@ -79,6 +86,7 @@ foreach ($allCategories as $cat) {
 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <script src="../asset/script/search.js"></script>
 <script src="../asset/script/validation.js"></script>
 
@@ -90,3 +98,9 @@ foreach ($allCategories as $cat) {
 </body>
 </html>
 >>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
+=======
+<script src="../asset/script/search.js"></script>
+
+</body>
+</html>
+>>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
