@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 require_once __DIR__ . '/../model/orderModel.php';
+=======
+require_once('../model/orderModel.php');
+>>>>>>> 1b4c921 (backup my checkout and payment work)
 
 function getUserOrders($userId) {
     if (empty($userId)) {
@@ -14,4 +18,8 @@ function getSpecificOrderDetails($orderId) {
     }
     return getOrderDetails($orderId);
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 1b4c921 (backup my checkout and payment work)

@@ -5,10 +5,8 @@ if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
 }
-require_once('../model/db.php');
-$user_id = $_SESSION['user_id'];
-$con = getConnection();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 $userId     = (int) $_SESSION['id'];
 $cartResult = getUserCartItems($userId);
@@ -102,51 +100,104 @@ while ($item = mysqli_fetch_assoc($cartResult)) {
 $sql = "SELECT c.quantity, p.name, p.price FROM cart c JOIN products p ON c.product_id = p.id WHERE c.user_id = $user_id";
 $result = mysqli_query($con, $sql);
 $total_amount = 0;
+=======
+require_once('../model/checkoutModel.php');
+$userId = $_SESSION['user_id'];
+
+$cartResult = getUserCartItems($userId);
+
+if (mysqli_num_rows($cartResult) == 0) {
+    header("Location: cart.php?error=empty_cart");
+    exit();
+}
+>>>>>>> 1b4c921 (backup my checkout and payment work)
 ?>
 
 <html>
-<head><title>Checkout</title></head>
+<head>
+    <title>Checkout - Invoice Summary</title>
+    <link rel="stylesheet" href="../asset/css/checkout.css">
+</head>
 <body>
-    <h2>Checkout</h2>
-    <form action="../controller/placeOrderAction.php" method="POST">
-        <table border="1">
-            <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Subtotal</th>
-            </tr>
-            <?php while($row = mysqli_fetch_assoc($result)): 
-                $subtotal = $row['quantity'] * $row['price'];
-                $total_amount += $subtotal;
-            ?>
-            <tr>
-                <td><?php echo $row['name']; ?></td>
-                <td><?php echo $row['quantity']; ?></td>
-                <td><?php echo $row['price']; ?></td>
-                <td><?php echo number_format($subtotal, 2); ?></td>
-            </tr>
-            <?php endwhile; ?>
-            <tr>
-                <td colspan="3">Total Amount</td>
-                <td><?php echo number_format($total_amount, 2); ?> TK</td>
-            </tr>
+    <div class="checkout-container">
+        <h2>Invoice Summary</h2>
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-bottom: 20px; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                $totalAmount = 0;
+                while($item = mysqli_fetch_assoc($cartResult)): 
+                    $subtotal = $item['quantity'] * $item['price'];
+                    $totalAmount += $subtotal;
+                ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($item['name'] ?? 'Product'); ?></td>
+                        <td><?php echo $item['quantity']; ?></td>
+                        <td><?php echo number_format($item['price'], 2); ?> TK</td>
+                        <td><?php echo number_format($subtotal, 2); ?> TK</td>
+                    </tr>
+                <?php endwhile; ?>
+                <tr style="font-weight: bold; background-color: #f9f9f9;">
+                    <td colspan="3" style="text-align: right;">Total Amount:</td>
+                    <td><?php echo number_format($totalAmount, 2); ?> TK</td>
+                </tr>
+            </tbody>
         </table>
 
-        <input type="hidden" name="total_amount" value="<?php echo $total_amount; ?>">
+        <form id="checkoutForm" action="../controller/checkoutController.php" method="POST">
+            <input type="hidden" name="total_amount" value="<?php echo $totalAmount; ?>">
+            
+            <h3>Shipping Address</h3>
+            <textarea id="address" name="address" rows="3" placeholder="Enter your full shipping address..." style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea>
+            
+            <h3>Select Payment Method</h3>
+            <select id="paymentMethod" name="payment_method" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+                <option value="">-- Choose Option --</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="bKash">bKash</option>
+                <option value="Nagad">Nagad</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
 
-        <h3>Shipping Information</h3>
-        <textarea name="address" required></textarea>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <a href="cart.php" class="btn-cancel" style="padding: 10px 20px; background-color: #ccc; color: #000; text-decoration: none; font-weight: bold; display: inline-block;">Cancel</a>
+                <button type="submit" class="btn-continue" style="padding: 10px 20px; background-color: #28a745; color: #fff; border: none; font-weight: bold; cursor: pointer;">Continue & Place Order</button>
+            </div>
+        </form>
+    </div>
 
-        <h3>Select Payment Method</h3>
-        <input type="radio" name="payment_method" value="bKash" required> bKash
-        <input type="radio" name="payment_method" value="Nagad"> Nagad
-        <input type="radio" name="payment_method" value="Credit Card"> Credit Card
-        <input type="radio" name="payment_method" value="Cash on Delivery"> Cash on Delivery
+    <script>
+    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+        var address = document.getElementById('address').value.trim();
+        var paymentMethod = document.getElementById('paymentMethod').value;
 
+<<<<<<< HEAD
         <br><br>
         <button type="submit">Confirm Order</button>
     </form>
 >>>>>>> 004b1b1 (Updated checkout and added order management & payment views)
+=======
+        if (address === "") {
+            alert("Please enter your shipping address.");
+            event.preventDefault(); // Form submit hote dibe na
+            return false;
+        }
+
+        if (paymentMethod === "") {
+            alert("Please select a payment method.");
+            event.preventDefault(); // Form submit hote dibe na
+            return false;
+        }
+    });
+    </script>
+>>>>>>> 1b4c921 (backup my checkout and payment work)
 </body>
 </html>
