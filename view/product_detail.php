@@ -29,11 +29,7 @@ if ($product['size_chart'] != null && $product['size_chart'] != '') {
 
 $imgSrc = '../asset/img/no-image.jpg';
 if ($product['image_path'] != null && $product['image_path'] != '') {
-<<<<<<< HEAD
-    $imgSrc = '../asset/upload/products/' . $product['image_path'];
-=======
     $imgSrc = '../public/uploads/products/' . $product['image_path'];
->>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
 }
 ?>
 <!DOCTYPE html>

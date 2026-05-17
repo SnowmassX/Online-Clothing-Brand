@@ -65,11 +65,7 @@ function showProducts(products) {
 
         var imgSrc = '../asset/img/no-image.jpg';
         if (p.image_path != '' && p.image_path != null) {
-<<<<<<< HEAD
-            imgSrc = '../asset/upload/products/' + p.image_path;
-=======
             imgSrc = '../public/uploads/products/' + p.image_path;
->>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
         }
 
         var stockHtml = '';
