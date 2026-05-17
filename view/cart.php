@@ -33,6 +33,7 @@ foreach ($cartItems as $item) {
     <div class="nav-links">
         <a href="search_results.php">Browse</a>
         <a href="cart.php">Cart <span class="cart-badge" id="cart-count"><?php echo count($cartItems); ?></span></a>
+        <a href="purchase_history.php">My Orders</a>
         <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
         <a href="../controller/logout.php">Logout</a>
     </div>
@@ -57,7 +58,7 @@ foreach ($cartItems as $item) {
 
                     <div class="cart-img">
                         <?php if ($item['image_path'] != null && $item['image_path'] != ''): ?>
-                            <img src="../public/uploads/products/<?php echo htmlspecialchars($item['image_path']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                            <img src="../asset/upload/products/<?php echo htmlspecialchars($item['image_path']); ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
                         <?php else: ?>
                             <img src="../asset/img/no-image.jpg" alt="no image">
                         <?php endif; ?>
