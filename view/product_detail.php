@@ -58,6 +58,7 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
         <?php if (isset($_SESSION['id'])): ?>
 >>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
+            <a href="purchase_history.php">My Orders</a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
             <a href="../controller/logout.php">Logout</a>
         <?php else: ?>
