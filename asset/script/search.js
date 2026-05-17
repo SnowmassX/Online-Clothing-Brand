@@ -56,7 +56,7 @@ function showProducts(products) {
 
         var imgSrc = '../asset/img/no-image.jpg';
         if (p.image_path != '' && p.image_path != null) {
-            imgSrc = '../public/uploads/products/' + p.image_path;
+            imgSrc = '../asset/upload/products/' + p.image_path;
         }
 
         var stockHtml = '';
