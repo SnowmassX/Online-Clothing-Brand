@@ -54,25 +54,15 @@ if (mysqli_num_rows($cartResult) == 0) {
             </tbody>
         </table>
 
-        <form id="checkoutForm" action="../controller/checkoutController.php" method="POST">
+        <form id="checkoutForm" action="payment.php" method="POST">
             <input type="hidden" name="total_amount" value="<?php echo $totalAmount; ?>">
             
             <h3>Shipping Address</h3>
             <textarea id="address" name="address" rows="3" placeholder="Enter your full shipping address..." style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea>
-            
-            <h3>Select Payment Method</h3>
-            <select id="paymentMethod" name="payment_method" style="width: 100%; padding: 10px; margin-bottom: 20px;">
-                <option value="">-- Choose Option --</option>
-                <option value="Credit Card">Credit Card</option>
-                <option value="bKash">bKash</option>
-                <option value="Nagad">Nagad</option>
-                <option value="Bank Transfer">Bank Transfer</option>
-                <option value="Cash on Delivery">Cash on Delivery</option>
-            </select>
 
             <div style="display: flex; justify-content: space-between; margin-top: 20px;">
                 <a href="cart.php" class="btn-cancel" style="padding: 10px 20px; background-color: #ccc; color: #000; text-decoration: none; font-weight: bold; display: inline-block;">Cancel</a>
-                <button type="submit" class="btn-continue" style="padding: 10px 20px; background-color: #28a745; color: #fff; border: none; font-weight: bold; cursor: pointer;">Continue & Place Order</button>
+                <button type="submit" class="btn-continue" style="padding: 10px 20px; background-color: #28a745; color: #fff; border: none; font-weight: bold; cursor: pointer;">Continue to Payment</button>
             </div>
         </form>
     </div>
@@ -80,17 +70,10 @@ if (mysqli_num_rows($cartResult) == 0) {
     <script>
     document.getElementById('checkoutForm').addEventListener('submit', function(event) {
         var address = document.getElementById('address').value.trim();
-        var paymentMethod = document.getElementById('paymentMethod').value;
 
         if (address === "") {
             alert("Please enter your shipping address.");
-            event.preventDefault(); // Form submit hote dibe na
-            return false;
-        }
-
-        if (paymentMethod === "") {
-            alert("Please select a payment method.");
-            event.preventDefault(); // Form submit hote dibe na
+            event.preventDefault(); 
             return false;
         }
     });

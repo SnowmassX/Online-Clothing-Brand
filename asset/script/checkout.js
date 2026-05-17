@@ -3,20 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form) {
         form.addEventListener("submit", function (event) {
             var address = document.getElementsByName("address")[0].value.trim();
-            var paymentMethod = document.querySelector('input[name="payment_method"]:checked');
 
             if (address === "") {
                 alert("Please enter your delivery address.");
-                event.preventDefault();
+                event.preventDefault(); // ফর্ম সাবমিট হতে দেবে না
                 return false;
             }
-
-            if (!paymentMethod) {
-                alert("Please select a payment method.");
-                event.preventDefault();
-                return false;
-            }
-
             return true;
         });
     }

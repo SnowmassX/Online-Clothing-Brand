@@ -38,7 +38,7 @@ th {
     font-weight: bold;
 }
 
-textarea, select {
+textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -46,9 +46,6 @@ textarea, select {
     margin-bottom: 20px;
     font-size: 14px;
     box-sizing: border-box;
-}
-
-textarea {
     height: 90px;
     resize: vertical;
 }
