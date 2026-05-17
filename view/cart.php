@@ -72,15 +72,18 @@ foreach ($cartItems as $item) {
                     <div class="cart-price">Tk <?php echo number_format($item['price'], 2); ?></div>
 
                     <div class="cart-qty">
-                        <button class="qty-btn minus-btn" data-product-id="<?php echo $item['product_id']; ?>">-</button>
-                        <input type="number"
-                               class="qty-input"
-                               value="<?php echo $item['quantity']; ?>"
-                               min="1"
-                               max="<?php echo $item['stock']; ?>"
-                               data-product-id="<?php echo $item['product_id']; ?>"
-                               data-stock="<?php echo $item['stock']; ?>">
-                        <button class="qty-btn plus-btn" data-product-id="<?php echo $item['product_id']; ?>">+</button>
+                        <div class="qty-controls">
+                            <button class="qty-btn minus-btn" data-product-id="<?php echo $item['product_id']; ?>">-</button>
+                            <input type="number"
+                                   class="qty-input"
+                                   value="<?php echo $item['quantity']; ?>"
+                                   min="1"
+                                   max="<?php echo $item['stock']; ?>"
+                                   data-product-id="<?php echo $item['product_id']; ?>"
+                                   data-stock="<?php echo $item['stock']; ?>">
+                            <button class="qty-btn plus-btn" data-product-id="<?php echo $item['product_id']; ?>">+</button>
+                        </div>
+                        <span id="qty-error-<?php echo $item['product_id']; ?>" style="color:red; font-size:12px;"></span>
                     </div>
 
                     <div class="cart-subtotal" id="subtotal-<?php echo $item['product_id']; ?>">
@@ -110,6 +113,7 @@ foreach ($cartItems as $item) {
 </div>
 
 <script src="../asset/script/cart.js"></script>
+<script src="../asset/script/validation.js"></script>
 
 </body>
 </html>

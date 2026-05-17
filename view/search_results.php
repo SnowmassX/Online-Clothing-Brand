@@ -57,6 +57,7 @@ foreach ($allCategories as $cat) {
         </select>
         <button id="search-btn">Search</button>
     </div>
+    <p id="search-error" style="color:red; font-size:13px; text-align:center;"></p>
     <p id="result-count"></p>
 </div>
 
@@ -67,6 +68,7 @@ foreach ($allCategories as $cat) {
 </div>
 
 <script src="../asset/script/search.js"></script>
+<script src="../asset/script/validation.js"></script>
 
 </body>
 </html>
