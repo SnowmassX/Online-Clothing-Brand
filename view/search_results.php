@@ -73,9 +73,13 @@ foreach ($allCategories as $cat) {
         <button id="search-btn">Search</button>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <p id="search-error" style="color:red; font-size:13px; text-align:center;"></p>
 =======
 >>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
+=======
+    <p id="search-error" style="color:red; font-size:13px; text-align:center;"></p>
+>>>>>>> 298285d (updated cart and search results views)
     <p id="result-count"></p>
 </div>
 
@@ -100,6 +104,7 @@ foreach ($allCategories as $cat) {
 >>>>>>> b7f367f (feat: add product search with AJAX filtering (Task 3))
 =======
 <script src="../asset/script/search.js"></script>
+<script src="../asset/script/validation.js"></script>
 
 </body>
 </html>

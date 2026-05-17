@@ -103,6 +103,9 @@ foreach ($cartItems as $item) {
 
                     <div class="cart-qty">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 298285d (updated cart and search results views)
                         <div class="qty-controls">
                             <button class="qty-btn minus-btn" data-product-id="<?php echo $item['product_id']; ?>">-</button>
                             <input type="number"
@@ -115,6 +118,7 @@ foreach ($cartItems as $item) {
                             <button class="qty-btn plus-btn" data-product-id="<?php echo $item['product_id']; ?>">+</button>
                         </div>
                         <span id="qty-error-<?php echo $item['product_id']; ?>" style="color:red; font-size:12px;"></span>
+<<<<<<< HEAD
 =======
                         <button class="qty-btn minus-btn" data-product-id="<?php echo $item['product_id']; ?>">-</button>
                         <input type="number"
@@ -126,6 +130,8 @@ foreach ($cartItems as $item) {
                                data-stock="<?php echo $item['stock']; ?>">
                         <button class="qty-btn plus-btn" data-product-id="<?php echo $item['product_id']; ?>">+</button>
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
+=======
+>>>>>>> 298285d (updated cart and search results views)
                     </div>
 
                     <div class="cart-subtotal" id="subtotal-<?php echo $item['product_id']; ?>">
@@ -169,6 +175,7 @@ foreach ($cartItems as $item) {
 >>>>>>> e742baa (feat: add cart management with AJAX (Task 3))
 =======
 <script src="../asset/script/cart.js"></script>
+<script src="../asset/script/validation.js"></script>
 
 </body>
 </html>
