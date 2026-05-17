@@ -27,10 +27,21 @@ $order_id = $_GET['order_id'] ?? null;
             <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
             
             <h3>Choose Payment Method:</h3>
-            <input type="radio" name="payment_method" value="bKash" required> bKash 
-            <input type="radio" name="payment_method" value="Nagad"> Nagad 
-            <input type="radio" name="payment_method" value="Card"> Credit/Debit Card 
-            <br><br>
+            
+            <div class="payment-methods-container">
+                <label class="method-option">
+                    <input type="radio" name="payment_method" value="bKash" required> 
+                    <span>bKash</span>
+                </label>
+                <label class="method-option">
+                    <input type="radio" name="payment_method" value="Nagad"> 
+                    <span>Nagad</span>
+                </label>
+                <label class="method-option">
+                    <input type="radio" name="payment_method" value="Card"> 
+                    <span>Credit/Debit Card</span>
+                </label>
+            </div>
 
             <div id="payment-details">
                 <div class="input-group">
@@ -44,12 +55,11 @@ $order_id = $_GET['order_id'] ?? null;
                 </div>
             </div>
 
-            <button type="submit">Pay Now</button>
+            <button type="submit" class="btn-pay">Pay Now</button>
         </form>
 
-        <br>
-        <div style="text-align: center;">
-            <a href="checkout.php" style="color: #6c757d; text-decoration: none;">Cancel and Go Back</a>
+        <div class="back-container">
+            <a href="checkout.php" class="btn-pay btn-back">Back</a>
         </div>
     </div>
 
