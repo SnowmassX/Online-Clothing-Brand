@@ -21,13 +21,19 @@ h2, h3 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 028d60b (Task 4 added completely)
 h3 {
     margin-top: 25px;
     margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+>>>>>>> 028d60b (Task 4 added completely)
 .amount-box {
     background-color: #e9ecef;
     padding: 15px;
@@ -39,6 +45,9 @@ h3 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 028d60b (Task 4 added completely)
 .payment-methods-container {
     display: flex;
     flex-direction: column;
@@ -62,8 +71,11 @@ h3 {
     margin: 0;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+>>>>>>> 028d60b (Task 4 added completely)
 .input-group {
     margin-bottom: 15px;
 }
@@ -83,11 +95,16 @@ h3 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 button, .btn-pay {
     display: block;
 =======
 button {
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+button, .btn-pay {
+    display: block;
+>>>>>>> 028d60b (Task 4 added completely)
     background-color: #007bff;
     color: white;
     padding: 12px 20px;
@@ -98,11 +115,15 @@ button {
     width: 100%;
     margin-top: 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 028d60b (Task 4 added completely)
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     box-sizing: border-box;
     transition: background-color 0.2s ease;
+<<<<<<< HEAD
 }
 
 button:hover, .btn-pay:hover {
@@ -113,9 +134,19 @@ button:hover, .btn-pay:hover {
     margin-top: 15px;
     text-align: center;
 =======
+=======
+>>>>>>> 028d60b (Task 4 added completely)
 }
 
-button:hover {
+button:hover, .btn-pay:hover {
     background-color: #0069d9;
+<<<<<<< HEAD
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+}
+
+.back-container {
+    margin-top: 15px;
+    text-align: center;
+>>>>>>> 028d60b (Task 4 added completely)
 }

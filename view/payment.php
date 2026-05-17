@@ -44,6 +44,7 @@ $order_id = $_GET['order_id'] ?? null;
                     <span>Credit/Debit Card</span>
                 </label>
             </div>
+<<<<<<< HEAD
 
             <div id="payment-details">
                 <div class="input-group">
@@ -88,6 +89,8 @@ $order_id = $_GET['order_id'] ?? null;
             <input type="radio" name="payment_method" value="Nagad"> Nagad 
             <input type="radio" name="payment_method" value="Card"> Credit/Debit Card 
             <br><br>
+=======
+>>>>>>> 028d60b (Task 4 added completely)
 
 <<<<<<< HEAD
     <br>
@@ -106,12 +109,11 @@ $order_id = $_GET['order_id'] ?? null;
                 </div>
             </div>
 
-            <button type="submit">Pay Now</button>
+            <button type="submit" class="btn-pay">Pay Now</button>
         </form>
 
-        <br>
-        <div style="text-align: center;">
-            <a href="checkout.php" style="color: #6c757d; text-decoration: none;">Cancel and Go Back</a>
+        <div class="back-container">
+            <a href="checkout.php" class="btn-pay btn-back">Back</a>
         </div>
     </div>
 
