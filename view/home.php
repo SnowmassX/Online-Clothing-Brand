@@ -39,6 +39,7 @@
                 Products
             </a>
             <a href="cart.php">Cart</a>
+            <a href="purchase_history.php">My Orders</a>
             <a href="profile.php">Profile</a>
             <a href="login.php">Login</a>
             <a href="../controller/logout.php">Logout</a>
