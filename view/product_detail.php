@@ -29,7 +29,11 @@ if ($product['size_chart'] != null && $product['size_chart'] != '') {
 
 $imgSrc = '../asset/img/no-image.jpg';
 if ($product['image_path'] != null && $product['image_path'] != '') {
+<<<<<<< HEAD
     $imgSrc = '../public/uploads/products/' . $product['image_path'];
+=======
+    $imgSrc = '../asset/upload/products/' . $product['image_path'];
+>>>>>>> 93bb743 (merge issue fixing 3)
 }
 ?>
 <!DOCTYPE html>
