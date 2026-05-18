@@ -1,10 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -50,30 +54,63 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     text-align: center;
 =======
+=======
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
-    margin: 0;
-    padding: 20px;
+    color: #333;
+}
+
+.navbar {
+    background-color: #1a1a2e;
+    padding: 15px 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+}
+
+.navbar .brand {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #e94560;
 }
 
 .success-container {
+    max-width: 600px;
+    margin: 80px auto;
     background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     text-align: center;
+<<<<<<< HEAD
     max-width: 450px;
     width: 100%;
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
 }
 
 .success-icon {
     font-size: 60px;
+<<<<<<< HEAD
 <<<<<<< HEAD
     margin-bottom: 20px;
 }
@@ -136,46 +173,70 @@ body {
 }
 =======
     color: #28a745;
+=======
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
     margin-bottom: 20px;
 }
 
-h2 {
-    color: #333;
-    margin-bottom: 10px;
+.success-container h1 {
+    font-size: 26px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
 }
 
-p {
+.success-container p {
+    font-size: 15px;
     color: #666;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.btn-group a {
+.order-id-box {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: #1a1a2e;
+    margin-bottom: 30px;
     display: inline-block;
-    padding: 12px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    margin: 5px;
-    transition: background 0.2s;
 }
 
-.btn-history {
-    background-color: #007bff;
-    color: white;
-}
-
-.btn-history:hover {
-    background-color: #0069d9;
+.success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
 .btn-home {
-    background-color: #6c757d;
+    padding: 12px 25px;
+    background-color: #1a1a2e;
     color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .btn-home:hover {
+<<<<<<< HEAD
     background-color: #5a6268;
 }
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+    background-color: #e94560;
+}
+
+.btn-orders {
+    padding: 12px 25px;
+    background-color: #e94560;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-orders:hover {
+    background-color: #c73652;
+}
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)

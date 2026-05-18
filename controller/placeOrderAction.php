@@ -1,25 +1,27 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+
+if (!isset($_SESSION['id'])) {
     header("Location: ../view/login.php");
     exit();
 }
 
-require_once('../model/checkoutModel.php');
+require_once __DIR__ . '/../model/checkoutModel.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userId = $_SESSION['user_id'];
-    $totalAmount = $_POST['total_amount'] ?? 0;
-    $address = $_POST['address'] ?? '';
+
+    $userId        = (int) $_SESSION['id'];
+    $totalAmount   = $_POST['total_amount'] ?? 0;
     $paymentMethod = $_POST['payment_method'] ?? '';
 
-    if (empty($address) || empty($paymentMethod)) {
+    if (empty($paymentMethod)) {
         header("Location: ../view/checkout.php?error=empty_fields");
         exit();
     }
 
     $cartResult = getUserCartItems($userId);
     if (mysqli_num_rows($cartResult) == 0) {
+<<<<<<< HEAD
 <<<<<<< HEAD
         header("Location: ../view/cart.php?error=empty_cart");
         exit();
@@ -31,23 +33,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cartResult = getUserCartItems($userId);
 =======
         header("Location: ../view/checkout.php?error=empty_cart");
+=======
+        header("Location: ../view/cart.php?error=empty_cart");
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
         exit();
     }
 
-    $orderId = placeOrder($userId, $totalAmount, $address, $paymentMethod);
+    $orderId = placeOrder($userId, $totalAmount);
 
     if ($orderId) {
+<<<<<<< HEAD
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+        $cartResult = getUserCartItems($userId);
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
         while ($item = mysqli_fetch_assoc($cartResult)) {
             insertOrderItem($orderId, $item['product_id'], $item['quantity'], $item['price']);
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
         insertPayment($orderId, $totalAmount, $paymentMethod);
         clearCart($userId);
 
         header("Location: ../view/order_success.php?order_id=" . $orderId);
         exit();
+<<<<<<< HEAD
 =======
         if ($paymentMethod === 'Cash on Delivery') {
             clearCart($userId);
@@ -58,6 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 >>>>>>> 1b4c921 (backup my checkout and payment work)
+=======
+>>>>>>> e0ea6a1 (Fixed task 4 checkout and order system integration issues)
     } else {
         header("Location: ../view/checkout.php?error=failed");
         exit();
