@@ -29,7 +29,7 @@ if ($product['size_chart'] != null && $product['size_chart'] != '') {
 
 $imgSrc = '../asset/img/no-image.jpg';
 if ($product['image_path'] != null && $product['image_path'] != '') {
-    $imgSrc = '../asset/uploads/products/' . $product['image_path'];
+    $imgSrc = '../asset/upload/products/' . $product['image_path'];
 }
 ?>
 <!DOCTYPE html>

@@ -14,11 +14,6 @@ session_start();
     <header id="header">
         <div id="logo">StyleStore</div>
 
-        <div id="gender-nav">
-            <a href="search_results.php?gender=Men">Men</a>
-            <a href="search_results.php?gender=Women">Women</a>
-        </div>
-
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search products...">
             <button type="button" id="searchBtn">Search</button>
@@ -26,7 +21,7 @@ session_start();
 
         <nav id="navbar">
             <a href="home.php">Home</a>
-            <a href="search_results.php">Products</a>
+            <a href="product_detail.php">Products</a>
             <?php if (isset($_SESSION['id'])): ?>
                 <a href="cart.php">Cart</a>
                 <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
