@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #1a1a2e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .brand {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #e94560;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding: 20px;
+}
+
+.box {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.box h2 {
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.box p {
+    font-size: 15px;
+    color: #666666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    padding: 12px 30px;
+    background-color: #e94560;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: #c73652;
+}
+
+.register-btn {
+    padding: 12px 30px;
+    background-color: white;
+    color: #1a1a2e;
+    border: 2px solid #1a1a2e;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.register-btn:hover {
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.browse-link {
+    display: block;
+    color: #888888;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.browse-link:hover {
+    color: #e94560;
+}
