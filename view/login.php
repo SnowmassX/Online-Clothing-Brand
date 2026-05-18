@@ -12,14 +12,12 @@
     <header id="header">
 
         <div class="logo" id="logo">
-            Online Clothing Brand
+            StyleStore
         </div>
 
         <nav id="navbar">
             <a href="home.php" id="homeLink">Home</a>
-            <a href="login.php" id="loginLink">Login</a>
             <a href="registration.php" id="registerLink">Register</a>
-            <a href="../controller/logout.php" id="logoutLink">Logout</a>
         </nav>
 
     </header>

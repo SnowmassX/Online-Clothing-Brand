@@ -12,7 +12,7 @@
     <header id="header">
 
         <div class="logo" id="logo">
-            Online Clothing Brand
+            StyleStore
         </div>
 
         <nav id="navbar">

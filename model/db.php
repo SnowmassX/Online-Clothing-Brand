@@ -1,20 +1,14 @@
 <?php
+    $host = "127.0.0.1";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "online-clothing-brand";
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "online-clothing-brand"; 
+    function getConnection(){
+        global $host, $dbuser;
 
-function getConnection() {
-    global $dbhost, $dbuser, $dbpass, $dbname;
+        $con = mysqli_connect($host, $dbuser, $GLOBALS['dbpass'], $GLOBALS['dbname']);
 
-    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-    if (!$con) {
-        die("Connection failed: " . mysqli_connect_error());
+        return $con;
     }
-
-    return $con;
-}
-
 ?>
