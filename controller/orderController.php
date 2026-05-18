@@ -1,5 +1,5 @@
 <?php
-require_once('../model/orderModel.php');
+require_once __DIR__ . '/../model/orderModel.php';
 
 function getUserOrders($userId) {
     if (empty($userId)) {
