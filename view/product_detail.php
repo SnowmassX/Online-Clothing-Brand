@@ -29,11 +29,7 @@ if ($product['size_chart'] != null && $product['size_chart'] != '') {
 
 $imgSrc = '../asset/img/no-image.jpg';
 if ($product['image_path'] != null && $product['image_path'] != '') {
-<<<<<<< HEAD
     $imgSrc = '../public/uploads/products/' . $product['image_path'];
-=======
-    $imgSrc = '../asset/upload/products/' . $product['image_path'];
->>>>>>> 93bb743 (merge issue fixing 3)
 }
 ?>
 <!DOCTYPE html>
@@ -52,6 +48,7 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
         <a href="search_results.php">Browse</a>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="purchase_history.php">My Orders</a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
@@ -61,15 +58,20 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
 =======
         <?php if (isset($_SESSION['id'])): ?>
 >>>>>>> 633f39a (fix: session variable, logout path and JS path corrections (Task 3))
+=======
+>>>>>>> c0cdad9 (merge issue fixing 4)
             <a href="cart.php">Cart <span class="cart-badge" id="cart-count">0</span></a>
             <a href="purchase_history.php">My Orders</a>
             <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
             <a href="../controller/logout.php">Logout</a>
+<<<<<<< HEAD
         <?php else: ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
         <?php endif; ?>
 >>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
+=======
+>>>>>>> c0cdad9 (merge issue fixing 4)
     </div>
 </nav>
 
@@ -86,10 +88,14 @@ if ($product['image_path'] != null && $product['image_path'] != '') {
         <div class="product-meta">
             <span><?php echo htmlspecialchars($product['gender']); ?></span>
 <<<<<<< HEAD
+<<<<<<< HEAD
             
 =======
             <span>&middot;</span>
 >>>>>>> cce0709 (feat: add product detail page with size chart and add to cart button (Task 3))
+=======
+            
+>>>>>>> c0cdad9 (merge issue fixing 4)
             <span><?php echo htmlspecialchars($product['category_name']); ?></span>
         </div>
 
