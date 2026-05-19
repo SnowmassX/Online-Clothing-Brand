@@ -1,14 +1,19 @@
 <?php
-    $host = "127.0.0.1";
-    $dbuser = "root";
-    $dbpass = "";
-    $dbname = "online-clothing-brand";
+$host = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "online_clothing_brand";
 
-    function getConnection(){
-        global $host, $dbuser;
+function getConnection(){
+    global $host, $dbuser, $dbpass, $dbname;
 
-        $con = mysqli_connect($host, $dbuser, $GLOBALS['dbpass'], $GLOBALS['dbname']);
+    $con = mysqli_connect($host, $dbuser, $dbpass, $dbname);
 
-        return $con;
+    if(!$con){
+        die("Database connection failed: " . mysqli_connect_error());
     }
+
+    mysqli_set_charset($con, "utf8mb4");
+    return $con;
+}
 ?>
