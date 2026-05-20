@@ -6,14 +6,13 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Online Clothing Brand</title>
+    <title>Home - StyleStore</title>
     <link rel="stylesheet" href="../asset/css/home.css">
 </head>
 <body>
 
     <header id="header">
-        <div id="logo">Online Clothing Brand</div>
-
+        <div id="logo">StyleStore</div>
 
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search products...">
@@ -22,10 +21,9 @@ session_start();
 
         <nav id="navbar">
             <a href="home.php">Home</a>
-            <a href="search_results.php">Products</a>
+            <a href="product_detail.php">Products</a>
             <?php if (isset($_SESSION['id'])): ?>
                 <a href="cart.php">Cart</a>
-                <a href="purchase_history.php">My Orders</a>
                 <a href="profile.php"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
                 <a href="../controller/logout.php">Logout</a>
             <?php else: ?>

@@ -1,19 +1,15 @@
 <?php
 session_start();
-require_once __DIR__ . '/../model/userModel.php';
+require_once('../model/userModel.php');
 
 if (isset($_POST['submit'])) {
-    $email = trim($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
-
-    if ($email === '' || $password === '') {
-        echo "Email and password are required.";
-        exit;
-    }
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
 
     $userData = getUserByEmail($email);
 
     if ($userData && password_verify($password, $userData['password_hash'])) {
+
         $_SESSION['id'] = $userData['id'];
         $_SESSION['name'] = $userData['name'];
         $_SESSION['role'] = $userData['role'];
@@ -26,14 +22,13 @@ if (isset($_POST['submit'])) {
             setcookie('password', '', time() - 3600, "/");
         }
 
-        if ($userData['role'] === "admin") {
-            header('Location: ../index.php?page=dashboard');
+        if ($userData['role'] == "Admin") {
+            header('location: ../view/admin/dashboard.php');
         } else {
-            header('Location: ../view/home.php');
+            header('location: ../view/home.php');
         }
-        exit;
+        exit();
+    } else {
+        echo "Invalid email or password.";
     }
-
-    echo "Invalid email or password.";
 }
-?>

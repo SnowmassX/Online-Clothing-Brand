@@ -12,14 +12,12 @@
     <header id="header">
 
         <div class="logo" id="logo">
-            Online Clothing Brand
+            StyleStore
         </div>
 
         <nav id="navbar">
             <a href="home.php" id="homeLink">Home</a>
-            <a href="login.php" id="loginLink">Login</a>
             <a href="registration.php" id="registerLink">Register</a>
-            <a href="../controller/logout.php" id="logoutLink">Logout</a>
         </nav>
 
     </header>
@@ -31,29 +29,16 @@
             <h2 id="title">Login</h2>
 
             <form action="../controller/loginCheck.php" method="post" id="registrationForm" onsubmit="return validateLogin()">
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Enter Email">
+                <input type="email" name="email" id="email" placeholder="Enter Email">
 
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Enter Password">
+                <input type="password" name="password" id="password" placeholder="Enter Password">
 
                 <div class="remember-group">
                     <input type="checkbox" name="remember" id="remember">
                     <label for="remember">Remember Me</label>
                 </div>
 
-                <input
-                    type="submit"
-                    name="submit"
-                    id="submit"
-                    value="Login"
-                    onclick="validateForm()">
+                <input type="submit" name="submit" id="submit" value="Login" onclick="validateForm()">
 
                 <p id="error" style="color: red; text-align: center; font-size: 14px; margin-top: 10px;"></p>
             </form>

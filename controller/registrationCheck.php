@@ -63,18 +63,18 @@ if (isset($_REQUEST['submit'])) {
     }
 
     if ($isValid) {
-        move_uploaded_file($tmpName, "../asset/upload/" . $imageName);
+        move_uploaded_file($tmpName, "../asset/upload/user/" . $imageName);
 
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
         $user = [
-            "name"            => $name,
-            "email"           => $email,
-            "password"        => $password_hash,
+            "name" => $name,
+            "email" => $email,
+            "password" => $password_hash,
             "profile_picture" => $imageName,
-            "address"         => $address,
-            "phone"           => $phone,
-            "role"            => $role
+            "address" => $address,
+            "phone" => $phone,
+            "role" => $role
         ];
 
         $status = addUser($user);
@@ -87,4 +87,3 @@ if (isset($_REQUEST['submit'])) {
         }
     }
 }
-?>
